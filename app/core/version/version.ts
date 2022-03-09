@@ -1,10 +1,5 @@
 'use strict';
 
-import * as angular from "angular";
+import {app} from "../../app";
 
-angular.module('myApp.version', [
-  'myApp.version.interpolate-filter',
-  'myApp.version.version-directive'
-])
-
-.value('version', '0.1');
+app.value('version', '0.1');

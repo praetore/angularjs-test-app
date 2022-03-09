@@ -1,11 +1,9 @@
 'use strict';
 
-import * as angular from "angular";
+import {app} from "../../app";
 
-angular.module('myApp.version.version-directive', [])
-
-.directive('appVersion', ['version', function(version) {
-  return function(scope, elm, attrs) {
+app.directive('appVersion', ['version', function(version) {
+  return function(scope, elm) {
     elm.text(version);
   };
 }]);

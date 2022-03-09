@@ -6,9 +6,6 @@ import * as angularRoute from "angular-route";
 
 export const app = angular.module('myApp', [
     angularRoute,
-    'myApp.view1',
-    'myApp.view2',
-    'myApp.version'
 ]);
 
 app.config(['$locationProvider', '$routeProvider', function (

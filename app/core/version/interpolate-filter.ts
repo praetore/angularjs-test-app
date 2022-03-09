@@ -1,10 +1,8 @@
 'use strict';
 
-import * as angular from "angular";
+import {app} from "../../app";
 
-angular.module('myApp.version.interpolate-filter', [])
-
-.filter('interpolate', ['version', function(version) {
+app.filter('interpolate', ['version', function(version) {
   return function(text: any) {
     return String(text).replace(/\%VERSION\%/mg, version);
   };
