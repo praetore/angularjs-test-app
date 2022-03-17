@@ -1,6 +1,5 @@
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import CopyPlugin from "copy-webpack-plugin";
 import {Configuration} from "webpack";
 import "webpack-dev-server";
 
@@ -33,25 +32,19 @@ const config: Configuration = {
                     'sass-loader'
                 ]
             },
+            {
+                test: /\.html$/i,
+                type: 'asset/source',
+                exclude: [
+                    path.resolve(__dirname, "app", "index.html"),
+                ],
+            },
         ],
     },
     plugins: [
-        new CopyPlugin({
-            patterns: [
-                {
-                    from: "**/*.html",
-                    globOptions: {
-                        ignore: [
-                            '**/index.html'
-                        ]
-                    },
-                    context: "app",
-                },
-            ],
-        }),
         new HtmlWebpackPlugin({
             title: 'My AngularJS application',
-            template: path.resolve(__dirname, "app/index.html"),
+            template: path.resolve(__dirname, "app", "index.html"),
             filename: 'index.html',
         }),
     ],

@@ -1,11 +1,11 @@
-'use strict';
+import template from './view2.html';
 
 import * as angular from "angular";
 import {app} from "../app";
 
 app.config(['$routeProvider', function($routeProvider: angular.route.IRouteProvider) {
   $routeProvider.when('/view2', {
-    templateUrl: 'view2/view2.html',
+    template: template,
     controller: 'View2Ctrl'
   });
 }])

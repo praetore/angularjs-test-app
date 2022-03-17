@@ -2,10 +2,9 @@
 
 // Declare app level module which depends on views, and core components
 import * as angular from "angular";
-import * as angularRoute from "angular-route";
 
 export const app = angular.module('myApp', [
-    angularRoute,
+    'ngRoute',
 ]);
 
 app.config(['$locationProvider', '$routeProvider', function (
