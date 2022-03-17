@@ -1,10 +1,11 @@
-'use strict';
+import angular from "angular";
+import "angular-mocks";
 
 describe('myApp.version module', function() {
-  beforeEach(module('myApp.version'));
+  beforeEach(angular.mock.module('myApp.version'));
 
   describe('interpolate filter', function() {
-    beforeEach(module(function($provide) {
+    beforeEach(angular.mock.module(function($provide: angular.auto.IProvideService) {
       $provide.value('version', 'TEST_VER');
     }));
 

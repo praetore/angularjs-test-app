@@ -1,15 +1,16 @@
-'use strict';
+import angular from "angular";
+import "angular-mocks";
 
 describe('myApp.version module', function() {
-  beforeEach(module('myApp.version'));
+  beforeEach(angular.mock.module('myApp.version'));
 
   describe('app-version directive', function() {
     it('should print current version', function() {
-      module(function($provide) {
+      angular.mock.module(function($provide: angular.auto.IProvideService) {
         $provide.value('version', 'TEST_VER');
       });
       inject(function($compile, $rootScope) {
-        var element = $compile('<span app-version></span>')($rootScope);
+        const element = $compile('<span app-version></span>')($rootScope);
         expect(element.text()).toEqual('TEST_VER');
       });
     });

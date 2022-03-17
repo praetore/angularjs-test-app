@@ -1,7 +1,8 @@
-'use strict';
+import angular from "angular";
+import "angular-mocks";
 
 describe('myApp.version module', function() {
-  beforeEach(module('myApp.version'));
+  beforeEach(angular.mock.module('myApp.version'));
 
   describe('version service', function() {
     it('should return current version', inject(function(version) {
